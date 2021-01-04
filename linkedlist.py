@@ -19,7 +19,7 @@ class LinkedList:
 
         self.numOfNodes = self.numOfNodes + 1
         new_node = Node(data)
-
+        
         if not self.head:
             self.head = new_node
         else:
@@ -32,8 +32,12 @@ class LinkedList:
         
         self.numOfNodes = self.numOfNodes + 1
         new_node = Node(data)
-
+        print("Insert End: ")
+        print("New Node: ", new_node)
+        print("-------------")
         actual_node = self.head
+        print("Actual Node: ")
+        print(hex(id(actual_node)))
 
         while actual_node.nextNode is not None:
             actual_node = actual_node.nextNode
@@ -79,18 +83,10 @@ class LinkedList:
 linked_list = LinkedList()
 linked_list.insert_start(4)
 linked_list.insert_start(3)
-linked_list.insert_start('Adam')
 linked_list.insert_end(10)
+linked_list.insert_end(20)
+linked_list.insert_end(30)
 
 
-
-linked_list.traverse()
-print("Size: %d" % linked_list.size_of_list())
-
-linked_list.remove('Adam')
-print("Size: %d" % linked_list.size_of_list())
-
-print('------------')
-linked_list.traverse()
 
 
