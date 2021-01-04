@@ -5,6 +5,9 @@ class Node:
         self.nextNode = None 
 
 
+
+
+
 class LinkedList:
 
     def __init__(self):
@@ -23,6 +26,7 @@ class LinkedList:
             new_node.nextNode = self.head
             self.head = new_node
 
+
     # linear running time O(N)
     def insert_end(self, data):
         
@@ -36,8 +40,9 @@ class LinkedList:
         
         actual_node.nextNode = new_node
     
+
     def remove(self, data):
-        of self.head is None:
+        if self.head is None:
             return
 
         actual_node = self.head
@@ -51,6 +56,7 @@ class LinkedList:
         if actual_node is None:
             return
 
+        self.numOfNodes = self.numOfNodes -1 
         if previous_node is None:
             self.head = actual_node.nextNode
         else:
@@ -73,8 +79,18 @@ class LinkedList:
 linked_list = LinkedList()
 linked_list.insert_start(4)
 linked_list.insert_start(3)
-linked_list.insert_start(7)
+linked_list.insert_start('Adam')
 linked_list.insert_end(10)
 
+
+
 linked_list.traverse()
+print("Size: %d" % linked_list.size_of_list())
+
+linked_list.remove('Adam')
+print("Size: %d" % linked_list.size_of_list())
+
+print('------------')
+linked_list.traverse()
+
 
